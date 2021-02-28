@@ -1,0 +1,20 @@
+function sameFrequency (int1, int2) {
+    // frequency counter pattern
+    let str1 = int1.toString();
+    let str2 = int2.toString();
+    let digits = {};
+    
+    if (str1.length !== str2.length) return false;
+    
+    for (let i of str1) {
+        digits[i] = digits[i] + 1 || 1;
+    }
+    for (let j of str2) {
+        if (!digits[j]) {
+            return false;
+        }
+        digits[j] -= 1;
+    }
+    
+    return true;
+};
