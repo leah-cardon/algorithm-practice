@@ -1,0 +1,19 @@
+function validAnagram (word1, word2) {
+    // frequency counter pattern
+    if (word1.length !== word2.length) {
+        return false;
+    }
+    let letters = {};
+
+    for (let char of word1) {
+        letters[char] = letters[char] + 1 || 1;
+    }
+    for (let char of word2) {
+        if (!letters[char]) {
+            return false;
+        }
+        letters[char]--;
+    }
+
+    return true;
+};
