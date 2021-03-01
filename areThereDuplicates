@@ -1,0 +1,13 @@
+function areThereDuplicates () {
+    let counts = {};
+    let args = Array.from(arguments);
+    
+    for (let i of args) {
+        if (counts[i]) {
+            return true;
+        } else {
+            counts[i] = 1;
+        }
+    }
+    return false;
+}
