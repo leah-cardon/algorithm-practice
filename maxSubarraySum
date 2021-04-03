@@ -1,0 +1,26 @@
+function maxSubarraySum (arr, len) {
+    if (len > arr.length) {
+        return null;
+    }
+    
+    let max = -Infinity;
+    let start = 0;
+    let end = len - 1;
+    let temp = 0;
+    
+    for (let i = 0; i < arr.length - len + 1; i++) {
+        start = i;
+        end = i + len;
+        temp = 0;
+
+        for (let j = start; j < end; j++) {
+            temp += arr[j];
+        }
+        
+        if (temp > max) {
+            max = temp;
+        }
+    }
+    
+    return max;
+}
